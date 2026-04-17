@@ -222,6 +222,106 @@ textarea {
 }
 
 
+/* ===========================
+   TABLET (hasta 1024px)
+   =========================== */
+@media (max-width: 1024px) {
+
+    .lv-header__container {
+        padding: var(--lv-space-md) var(--lv-space-md);
+    }
+
+    .lv-header__nav {
+        gap: var(--lv-space-md);
+    }
+
+    .lv-header__name {
+        font-size: var(--lv-font-size-md);
+    }
+
+    .lv-header__button {
+        padding: var(--lv-space-xs) var(--lv-space-sm);
+    }
+}
+
+/* ===========================
+   MOBILE (hasta 768px)
+   =========================== */
+@media (max-width: 768px) {
+
+    .lv-header__container {
+        flex-wrap: wrap;
+        gap: var(--lv-space-sm);
+        justify-content: space-between;
+    }
+
+    /* Brand más compacto */
+    .lv-header__logo-img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .lv-header__name {
+        font-size: var(--lv-font-size-sm);
+    }
+
+    /* NAV se acomoda o baja */
+    .lv-header__nav {
+        width: 100%;
+        justify-content: center;
+        gap: var(--lv-space-md);
+        order: 3;
+    }
+
+    .lv-header__link {
+        font-size: var(--lv-font-size-sm);
+    }
+
+    /* CTA más compacto */
+    .lv-header__cta {
+        order: 2;
+    }
+
+    .lv-header__button {
+        font-size: var(--lv-font-size-xs);
+        padding: 6px 10px;
+    }
+}
+
+/* ===========================
+   MOBILE CHICO (hasta 480px)
+   =========================== */
+@media (max-width: 480px) {
+
+    .lv-header__container {
+        padding: var(--lv-space-sm);
+    }
+
+    /* Opcional: ocultar nombre si queda apretado */
+    .lv-header__name {
+        display: none;
+    }
+
+    .lv-header__nav {
+        gap: var(--lv-space-sm);
+        flex-wrap: wrap;
+    }
+
+    .lv-header__link {
+        font-size: 12px;
+    }
+
+    .lv-header__button {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .lv-header__logo-img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 
 
 
