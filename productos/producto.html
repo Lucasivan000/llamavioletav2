@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="producto.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="lvp-header">
+        <div class="lvp-header__container">
+
+            <a href="/" class="lvp-header__logo" aria-label="Ir al inicio">
+                <img src="/assets/logo-llama-violeta.svg" alt="Llama Violeta">
+            </a>
+
+        </div>
+    </header>
+    <main class="lvp-product">
+
+        <!-- HERO PRODUCTO -->
+        <section class="lvp-hero">
+            <div class="lvp-hero__container">
+
+                <div class="lvp-hero__media">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                        alt="Cartera Alba en macramé" />
+                </div>
+
+                <div class="lvp-hero__content">
+                    <h1 class="lvp-hero__title">Cartera Alba</h1>
+                    <p class="lvp-hero__subtitle">
+                        Hecha a mano en macramé. Personalizable.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GALERÍA -->
+        <section class="lvp-gallery">
+            <div class="lvp-gallery__container">
+
+                <div class="lvp-gallery__grid">
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990" alt="">
+                    <img src="https://images.unsplash.com/photo-1593032465175-481ac7f4011d" alt="">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a41552231693" alt="">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INFORMACIÓN -->
+        <section class="lvp-info">
+            <div class="lvp-info__container">
+
+                <div class="lvp-info__block">
+                    <h2>Historia</h2>
+                    <p>
+                        Cada cartera se teje a mano, sin moldes industriales.
+                        Las variaciones propias del macramé forman parte de su identidad.
+                    </p>
+                </div>
+
+                <div class="lvp-info__block">
+                    <h2>Detalles</h2>
+                    <p>
+                        Cada cartera se teje a mano, sin moldes industriales.
+                        Las variaciones propias del macramé forman parte de su identidad.
+                    </p>
+                </div>
+
+                <div class="lvp-info__block">
+                    <h2>Personalización</h2>
+                    <p>
+                        Podés elegir colores, combinaciones y pequeños detalles.
+                        El armado comienza luego de la consulta.
+                    </p>
+                </div>
+
+                <div class="lvp-info__block">
+                    <h2>Tiempos</h2>
+                    <p>
+                        Al tratarse de un trabajo artesanal, los tiempos pueden variar
+                        según el modelo y la personalización elegida.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="lvp-cta">
+            <div class="lvp-cta__container">
+
+                <p class="lvp-cta__text">
+                    ¿Querés hablar sobre esta cartera?
+                </p>
+
+                <button class="lvp-cta__button">
+                    Consultar este modelo
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="lvp-footer">
+        <div class="lvp-footer__container">
+
+            <div class="lvp-footer__brand">
+                <span class="lvp-footer__name">Llama Violeta</span>
+                <button class="lvp-footer__contact" type="button">
+                    Consultas y pedidos
+                </button>
+            </div>
+
+            <div class="lvp-footer__meta">
+                <span>© Llama Violeta</span>
+                <span class="lvp-footer__divider">·</span>
+                <a href="https://www.initiumq.com" target="_blank" rel="noopener noreferrer"
+                    class="lvp-footer__signature">
+                    Desarrollado por InitiumQuest
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../js/productos.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const id = parseInt(localStorage.getItem("selectedProductId"));
+
+            const product = products.find(p => p.id === id);
+
+            if (!product) return;
+
+            /* HERO */
+            document.querySelector(".lvp-hero__title").textContent = product.name;
+            document.querySelector(".lvp-hero__subtitle").textContent = product.subtitle;
+            document.querySelector(".lvp-hero__media img").src = product.images[0];
+
+            /* GALERÍA */
+            const gallery = document.querySelector(".lvp-gallery__grid");
+            gallery.innerHTML = "";
+
+            product.images.forEach(img => {
+                const el = document.createElement("img");
+                el.src = img;
+                gallery.appendChild(el);
+            });
+
+            /* INFO BLOQUES */
+            const blocks = document.querySelectorAll(".lvp-info__block");
+
+            blocks[0].querySelector("p").textContent = product.historia || "";
+            blocks[1].querySelector("p").textContent = product.details || "";
+            blocks[2].querySelector("p").textContent = product.personalization || "";
+            blocks[3].querySelector("p").textContent = product.times || "";
+
+        });
+    </script>
+
+
+</body>
+
+</html>

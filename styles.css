@@ -1,0 +1,973 @@
+/* ===========================
+   RESET BASE – LLAMA VIOLETA
+   =========================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--lv-color-bg);
+    color: var(--lv-color-text);
+    line-height: 1.6;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* ===========================
+   DESIGN TOKENS – LLAMA VIOLETA
+   =========================== */
+
+:root {
+    /* Brand Colors */
+    --lv-color-primary: #5B4B6B;
+    /* violeta humo */
+    --lv-color-secondary: #E6E0EB;
+    /* lila niebla */
+    --lv-color-accent: #C2A6B0;
+    /* arcilla suave */
+
+    /* Base Colors */
+    --lv-color-bg: #FAF9F7;
+    /* blanco lino */
+    --lv-color-text: #2E2A32;
+    /* grafito */
+    --lv-color-text-muted: #6D6773;
+
+    /* UI Colors */
+    --lv-color-border: rgba(91, 75, 107, 0.25);
+    --lv-color-shadow: rgba(46, 42, 50, 0.08);
+
+    /* Typography */
+    --lv-font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --lv-font-size-xs: 0.75rem;
+    --lv-font-size-sm: 0.85rem;
+    --lv-font-size-md: 0.95rem;
+    --lv-font-size-lg: 1.05rem;
+    --lv-font-size-xl: 1.4rem;
+
+    /* Spacing */
+    --lv-space-xxs: 4px;
+    --lv-space-xs: 8px;
+    --lv-space-sm: 12px;
+    --lv-space-md: 18px;
+    --lv-space-lg: 32px;
+    --lv-space-xl: 64px;
+
+    /* Radius */
+    --lv-radius-sm: 6px;
+    --lv-radius-md: 12px;
+    --lv-radius-lg: 24px;
+    --lv-radius-round: 50%;
+
+    /* Transitions */
+    --lv-transition-fast: 0.2s ease;
+    --lv-transition-base: 0.3s ease;
+
+    /* Layout */
+    --lv-max-width: 1240px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   HEADER – LLAMA VIOLETA
+   =========================== */
+
+.lv-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgba(250, 249, 247, 0.88);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    transition: var(--lv-transition-base);
+}
+
+.lv-header__container {
+    max-width: var(--lv-max-width);
+    margin: 0 auto;
+    padding: var(--lv-space-md) var(--lv-space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Marca */
+.lv-header__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--lv-space-xs);
+    cursor: pointer;
+}
+
+.lv-header__logo {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--lv-radius-round);
+    background-color: var(--lv-color-primary);
+    color: var(--lv-color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--lv-font-size-sm);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.lv-header__name {
+    font-size: var(--lv-font-size-lg);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+}
+
+/* Navegación */
+.lv-header__nav {
+    display: flex;
+    gap: var(--lv-space-lg);
+}
+
+.lv-header__link {
+    position: relative;
+    font-size: var(--lv-font-size-md);
+    color: var(--lv-color-text);
+    letter-spacing: 0.03em;
+    transition: color var(--lv-transition-fast);
+}
+
+.lv-header__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background-color: var(--lv-color-primary);
+    transition: width var(--lv-transition-fast);
+}
+
+.lv-header__link:hover {
+    color: var(--lv-color-primary);
+}
+
+.lv-header__link:hover::after {
+    width: 100%;
+}
+
+/* CTA */
+.lv-header__button {
+    padding: var(--lv-space-xs) var(--lv-space-md);
+    border: 1px solid var(--lv-color-primary);
+    border-radius: var(--lv-radius-lg);
+    font-size: var(--lv-font-size-sm);
+    letter-spacing: 0.04em;
+    color: var(--lv-color-primary);
+    transition: var(--lv-transition-fast);
+}
+
+.lv-header__button:hover {
+    background-color: var(--lv-color-primary);
+    color: var(--lv-color-bg);
+}
+
+/* Scroll state */
+.lv-header.is-scrolled {
+    box-shadow: 0 6px 20px var(--lv-color-shadow);
+}
+
+
+
+.lv-header__logo-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+    border-radius: var(--lv-radius-round);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   HERO – LLAMA VIOLETA
+   =========================== */
+
+.lv-hero {
+    padding: var(--lv-space-xl) var(--lv-space-lg);
+    background-color: var(--lv-color-bg);
+    overflow: hidden;
+}
+
+.lv-hero__container {
+    max-width: var(--lv-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lv-space-xl);
+    align-items: center;
+}
+
+/* Texto */
+.lv-hero__content {
+    max-width: 520px;
+    animation: lv-hero-fade-up 0.8s ease forwards;
+}
+
+.lv-hero__eyebrow {
+    font-size: var(--lv-font-size-sm);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--lv-color-primary);
+    margin-bottom: var(--lv-space-sm);
+}
+
+.lv-hero__title {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    line-height: 1.15;
+    font-weight: 500;
+    margin-bottom: var(--lv-space-md);
+}
+
+.lv-hero__description {
+    font-size: var(--lv-font-size-md);
+    color: var(--lv-color-text-muted);
+    margin-bottom: var(--lv-space-lg);
+    max-width: 460px;
+}
+
+/* CTA */
+.lv-hero__cta {
+    position: relative;
+    font-size: var(--lv-font-size-sm);
+    letter-spacing: 0.05em;
+    color: var(--lv-color-primary);
+    padding-bottom: 4px;
+}
+
+.lv-hero__cta::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--lv-color-primary);
+    transition: transform var(--lv-transition-fast);
+    transform-origin: left;
+}
+
+.lv-hero__cta:hover::after {
+    transform: scaleX(0.7);
+}
+
+/* Imagen */
+.lv-hero__media {
+    position: relative;
+    animation: lv-hero-fade 1s ease forwards;
+}
+
+.lv-hero__image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--lv-radius-md);
+    object-fit: cover;
+}
+
+/* Animaciones */
+@keyframes lv-hero-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lv-hero-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .lv-hero {
+        padding: var(--lv-space-lg) var(--lv-space-md);
+    }
+
+    .lv-hero__container {
+        grid-template-columns: 1fr;
+        gap: var(--lv-space-lg);
+    }
+
+    .lv-hero__media {
+        order: -1;
+    }
+
+    .lv-hero__title {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   MANIFIESTO – LLAMA VIOLETA
+   =========================== */
+
+.lv-manifesto {
+    padding: var(--lv-space-xl) var(--lv-space-lg);
+    background-color: var(--lv-color-secondary);
+}
+
+.lv-manifesto__container {
+    max-width: var(--lv-max-width);
+    margin: 0 auto;
+}
+
+/* Contenido */
+.lv-manifesto__content {
+    max-width: 640px;
+}
+
+.lv-manifesto__title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: var(--lv-space-md);
+    color: var(--lv-color-text);
+}
+
+.lv-manifesto__text {
+    font-size: var(--lv-font-size-md);
+    color: var(--lv-color-text-muted);
+    margin-bottom: var(--lv-space-md);
+    line-height: 1.7;
+}
+
+/* ===========================
+   SCROLL REVEAL
+   =========================== */
+
+.lv-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.lv-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+/* ===========================
+   PROCESO – TIMELINE EDITORIAL
+   =========================== */
+
+.lv-process {
+    padding: var(--lv-space-xl) var(--lv-space-lg);
+    background-color: var(--lv-color-bg);
+}
+
+.lv-process__container {
+    max-width: var(--lv-max-width);
+    margin: 0 auto;
+}
+
+/* Header */
+.lv-process__header {
+    max-width: 520px;
+    margin-bottom: var(--lv-space-xl);
+}
+
+.lv-process__title {
+    font-size: clamp(1.9rem, 3vw, 2.4rem);
+    font-weight: 500;
+    margin-bottom: var(--lv-space-sm);
+}
+
+.lv-process__subtitle {
+    font-size: var(--lv-font-size-md);
+    color: var(--lv-color-text-muted);
+}
+
+/* Timeline */
+.lv-process__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lv-space-xl);
+}
+
+/* Step */
+.lv-process__step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lv-space-lg);
+    align-items: center;
+}
+
+/* Alternancia */
+.lv-step--left .lv-process__media {
+    order: 1;
+}
+
+.lv-step--left .lv-process__content {
+    order: 2;
+}
+
+.lv-step--right .lv-process__media {
+    order: 2;
+}
+
+.lv-step--right .lv-process__content {
+    order: 1;
+}
+
+/* Media */
+.lv-process__media img {
+    width: 100%;
+    border-radius: var(--lv-radius-md);
+    object-fit: cover;
+}
+
+/* Content */
+.lv-process__content {
+    max-width: 420px;
+}
+
+.lv-process__eyebrow {
+    font-size: var(--lv-font-size-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--lv-color-primary);
+    display: block;
+    margin-bottom: var(--lv-space-xs);
+}
+
+.lv-process__step-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: var(--lv-space-xs);
+}
+
+.lv-process__text {
+    font-size: var(--lv-font-size-md);
+    color: var(--lv-color-text-muted);
+    line-height: 1.7;
+}
+
+/* ===========================
+   SCROLL REVEAL (reutiliza lv-reveal)
+   =========================== */
+
+.lv-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.lv-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .lv-process {
+        padding: var(--lv-space-lg) var(--lv-space-md);
+    }
+
+    .lv-process__step {
+        grid-template-columns: 1fr;
+    }
+
+    .lv-process__media,
+    .lv-process__content {
+        order: unset;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   COLECCIÓN – CARDS EDITORIALES
+   =========================== */
+
+.lv-collection {
+    padding: var(--lv-space-xl) var(--lv-space-lg);
+    background-color: var(--lv-color-bg);
+}
+
+.lv-collection__container {
+    max-width: var(--lv-max-width);
+    margin: 0 auto;
+}
+
+/* Header */
+.lv-collection__header {
+    max-width: 520px;
+    margin-bottom: var(--lv-space-xl);
+}
+
+.lv-collection__title {
+    font-size: clamp(1.9rem, 3vw, 2.4rem);
+    font-weight: 500;
+    margin-bottom: var(--lv-space-sm);
+}
+
+.lv-collection__subtitle {
+    font-size: var(--lv-font-size-md);
+    color: var(--lv-color-text-muted);
+}
+
+/* Grid */
+.lv-collection__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--lv-space-lg);
+}
+
+/* ===========================
+   PRODUCT CARD
+   =========================== */
+
+.lv-product-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--lv-color-bg);
+}
+
+/* Media (ANTI-BUG IMAGE SETUP) */
+.lv-product-card__media {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: var(--lv-color-secondary);
+    border-radius: var(--lv-radius-md);
+    padding: var(--lv-space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lv-product-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* CLAVE */
+    object-position: center;
+}
+
+/* Content */
+.lv-product-card__content {
+    padding-top: var(--lv-space-md);
+}
+
+.lv-product-card__name {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: var(--lv-space-xxs);
+}
+
+.lv-product-card__description {
+    font-size: var(--lv-font-size-sm);
+    color: var(--lv-color-text-muted);
+    margin-bottom: var(--lv-space-sm);
+}
+
+/* Button */
+.lv-product-card__button {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: var(--lv-font-size-sm);
+    letter-spacing: 0.08em;
+    color: var(--lv-color-primary);
+    cursor: pointer;
+    position: relative;
+}
+
+.lv-product-card__button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--lv-color-primary);
+    transition: transform var(--lv-transition-fast);
+    transform-origin: left;
+}
+
+.lv-product-card__button:hover::after {
+    transform: scaleX(0.6);
+}
+
+/* Hover sutil */
+.lv-product-card:hover .lv-product-card__media {
+    background-color: var(--lv-color-accent);
+    transition: background-color var(--lv-transition-base);
+}
+
+@media (max-width: 1024px) {
+    .lv-collection__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .lv-collection {
+        padding: var(--lv-space-lg) var(--lv-space-md);
+    }
+
+    .lv-collection__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   AUTORÍA ARTESANAL
+   =========================== */
+
+.lv-author {
+    padding: var(--lv-space-xl) var(--lv-space-lg);
+    background-color: var(--lv-color-secondary);
+}
+
+.lv-author__container {
+    max-width: var(--lv-max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Content */
+.lv-author__content {
+    max-width: 560px;
+}
+
+/* Title */
+.lv-author__title {
+    font-size: clamp(1.6rem, 2.8vw, 2rem);
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: var(--lv-space-md);
+    color: var(--lv-color-text);
+}
+
+/* Text block */
+.lv-author__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lv-space-sm);
+}
+
+.lv-author__text p {
+    font-size: var(--lv-font-size-md);
+    line-height: 1.6;
+    color: var(--lv-color-text-muted);
+    margin: 0;
+}
+
+/* Strong editorial (no negro puro) */
+.lv-author__text strong {
+    font-weight: 500;
+    color: var(--lv-color-text);
+}
+
+
+@media (max-width: 640px) {
+    .lv-author {
+        padding: var(--lv-space-lg) var(--lv-space-md);
+    }
+
+    .lv-author__content {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   CTA FINAL
+   =========================== */
+
+.lv-cta {
+    padding: var(--lv-space-xl) var(--lv-space-lg);
+    background-color: var(--lv-color-bg);
+}
+
+.lv-cta__container {
+    max-width: var(--lv-max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Content */
+.lv-cta__content {
+    max-width: 520px;
+    text-align: center;
+}
+
+/* Title */
+.lv-cta__title {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 500;
+    margin-bottom: var(--lv-space-sm);
+    color: var(--lv-color-text);
+}
+
+/* Text */
+.lv-cta__text {
+    font-size: var(--lv-font-size-md);
+    line-height: 1.6;
+    color: var(--lv-color-text-muted);
+    margin-bottom: var(--lv-space-md);
+}
+
+/* Button */
+.lv-cta__button {
+    background-color: var(--lv-color-primary);
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-size: var(--lv-font-size-sm);
+    letter-spacing: 0.08em;
+    border-radius: var(--lv-radius-md);
+    cursor: pointer;
+    transition:
+        background-color var(--lv-transition-base),
+        transform var(--lv-transition-fast);
+}
+
+.lv-cta__button:hover {
+    background-color: var(--lv-color-accent);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+    .lv-cta {
+        padding: var(--lv-space-lg) var(--lv-space-md);
+    }
+
+    .lv-cta__content {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+.lv-footer {
+    padding: var(--lv-space-lg) var(--lv-space-lg);
+    background-color: var(--lv-color-secondary);
+}
+
+.lv-footer__container {
+    max-width: var(--lv-max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--lv-space-md);
+}
+
+/* Content */
+.lv-footer__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lv-space-xs);
+}
+
+/* Brand */
+.lv-footer__brand {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--lv-color-text);
+    margin: 0;
+}
+
+/* Description */
+.lv-footer__description {
+    font-size: var(--lv-font-size-sm);
+    line-height: 1.5;
+    color: var(--lv-color-text-muted);
+    max-width: 420px;
+    margin: 0;
+}
+
+/* Actions */
+.lv-footer__actions {
+    margin-top: var(--lv-space-xs);
+}
+
+.lv-footer__link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: var(--lv-font-size-sm);
+    letter-spacing: 0.08em;
+    color: var(--lv-color-primary);
+    cursor: pointer;
+    position: relative;
+}
+
+.lv-footer__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--lv-color-primary);
+    transition: transform var(--lv-transition-fast);
+    transform-origin: left;
+}
+
+.lv-footer__link:hover::after {
+    transform: scaleX(0.6);
+}
+
+/* Bottom */
+.lv-footer__bottom {
+    padding-top: var(--lv-space-sm);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.lv-footer__bottom span {
+    font-size: 0.75rem;
+    color: var(--lv-color-text-muted);
+}
+
+@media (max-width: 640px) {
+    .lv-footer {
+        padding: var(--lv-space-md) var(--lv-space-md);
+    }
+
+    .lv-footer__description {
+        max-width: 100%;
+    }
+}
+
+
+/* ===========================
+   FIRMA TÉCNICA
+   =========================== */
+
+.lv-footer__signature {
+    font-size: 0.7rem;
+    color: var(--lv-color-text-muted);
+    opacity: 0.6;
+}
+
+.lv-footer__signature a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.lv-footer__signature a:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+}

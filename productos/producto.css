@@ -1,0 +1,370 @@
+/* ===========================
+   RESET
+   =========================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ===========================
+   VARIABLES
+   =========================== */
+
+:root {
+    /* Layout */
+    --lvp-max-width: 1080px;
+
+    /* Spacing */
+    --lvp-space-xxs: 4px;
+    --lvp-space-xs: 8px;
+    --lvp-space-sm: 16px;
+    --lvp-space-md: 24px;
+    --lvp-space-lg: 40px;
+    --lvp-space-xl: 64px;
+
+    /* Colors */
+    --lvp-color-bg: #f7f6f9;
+    --lvp-color-surface: #ffffff;
+    --lvp-color-primary: #6b5a86;
+    /* violeta grisáceo */
+    --lvp-color-accent: #8c79aa;
+    --lvp-color-text: #1f1f24;
+    --lvp-color-text-muted: #6e6b76;
+
+    /* Typography */
+    --lvp-font-size-sm: 0.85rem;
+    --lvp-font-size-md: 0.95rem;
+    --lvp-font-size-lg: 1.1rem;
+
+    /* UI */
+    --lvp-radius-md: 12px;
+    --lvp-transition-fast: 0.2s ease;
+    --lvp-transition-base: 0.3s ease;
+}
+
+
+
+
+/* ===========================
+   BASE
+   =========================== */
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--lvp-color-bg);
+    color: var(--lvp-color-text);
+}
+
+
+
+
+
+
+
+/* ===========================
+   HEADER SILENCIOSO
+   =========================== */
+
+.lvp-header {
+    padding: var(--lvp-space-md) var(--lvp-space-lg);
+    background-color: var(--lvp-color-bg);
+}
+
+.lvp-header__container {
+    max-width: var(--lvp-max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+.lvp-header__logo {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.85;
+    transition: opacity var(--lvp-transition-fast),
+        transform var(--lvp-transition-fast);
+}
+
+.lvp-header__logo:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.lvp-header__logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .lvp-header {
+        padding: var(--lvp-space-sm) var(--lvp-space-md);
+    }
+
+    .lvp-header__logo img {
+        height: 34px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ===========================
+   HERO
+   =========================== */
+
+.lvp-hero {
+    padding: var(--lvp-space-xl) var(--lvp-space-lg);
+}
+
+.lvp-hero__container {
+    max-width: var(--lvp-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lvp-space-lg);
+    align-items: center;
+}
+
+.lvp-hero__media {
+    background-color: var(--lvp-color-surface);
+    border-radius: var(--lvp-radius-md);
+    padding: var(--lvp-space-md);
+}
+
+.lvp-hero__media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.lvp-hero__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: var(--lvp-space-xs);
+}
+
+.lvp-hero__subtitle {
+    font-size: var(--lvp-font-size-md);
+    color: var(--lvp-color-text-muted);
+}
+
+/* ===========================
+   GALERÍA
+   =========================== */
+
+.lvp-gallery {
+    padding: var(--lvp-space-lg);
+}
+
+.lvp-gallery__container {
+    max-width: var(--lvp-max-width);
+    margin: 0 auto;
+}
+
+.lvp-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--lvp-space-sm);
+}
+
+.lvp-gallery__grid img {
+    border-radius: var(--lvp-radius-md);
+    object-fit: contain;
+    background-color: var(--lvp-color-surface);
+    padding: var(--lvp-space-xs);
+}
+
+/* ===========================
+   INFO
+   =========================== */
+
+.lvp-info {
+    padding: var(--lvp-space-xl) var(--lvp-space-lg);
+}
+
+.lvp-info__container {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--lvp-space-md);
+}
+
+.lvp-info__block h2 {
+    font-size: var(--lvp-font-size-lg);
+    font-weight: 500;
+    margin-bottom: var(--lvp-space-xxs);
+}
+
+.lvp-info__block p {
+    font-size: var(--lvp-font-size-md);
+    line-height: 1.6;
+    color: var(--lvp-color-text-muted);
+}
+
+/* ===========================
+   CTA
+   =========================== */
+
+.lvp-cta {
+    padding: var(--lvp-space-xl) var(--lvp-space-lg);
+    text-align: center;
+}
+
+.lvp-cta__text {
+    font-size: var(--lvp-font-size-md);
+    margin-bottom: var(--lvp-space-sm);
+}
+
+.lvp-cta__button {
+    background-color: var(--lvp-color-primary);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: var(--lvp-radius-md);
+    letter-spacing: 0.08em;
+    transition: background-color var(--lvp-transition-base),
+        transform var(--lvp-transition-fast);
+}
+
+.lvp-cta__button:hover {
+    background-color: var(--lvp-color-accent);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .lvp-hero__container {
+        grid-template-columns: 1fr;
+    }
+
+    .lvp-gallery__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+/* ===========================
+   MINI FOOTER – PRODUCTO
+   =========================== */
+
+.lvp-footer {
+    padding: var(--lvp-space-lg) var(--lvp-space-lg);
+    background-color: var(--lvp-color-bg);
+}
+
+.lvp-footer__container {
+    max-width: var(--lvp-max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--lvp-space-sm);
+}
+
+/* Marca + contacto */
+.lvp-footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.lvp-footer__name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--lvp-color-text);
+}
+
+.lvp-footer__contact {
+    align-self: flex-start;
+    font-size: var(--lvp-font-size-sm);
+    letter-spacing: 0.08em;
+    color: var(--lvp-color-primary);
+    padding: 0;
+    position: relative;
+}
+
+.lvp-footer__contact::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transform-origin: left;
+    transition: transform var(--lvp-transition-fast);
+}
+
+.lvp-footer__contact:hover::after {
+    transform: scaleX(0.6);
+}
+
+/* Meta inferior */
+.lvp-footer__meta {
+    font-size: 0.7rem;
+    color: var(--lvp-color-text-muted);
+    opacity: 0.65;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+}
+
+.lvp-footer__divider {
+    opacity: 0.5;
+}
+
+/* Firma técnica */
+.lvp-footer__signature {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+.lvp-footer__signature:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+}

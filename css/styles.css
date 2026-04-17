@@ -1,0 +1,847 @@
+/* VARIABLES */
+:root {
+    --violeta: #7a3db8;
+    --violeta-claro: #9d6adf;
+    --crema: #f8f4ef;
+    --texto: #333;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: white;
+    color: var(--texto);
+}
+
+
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    min-height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+    .brand img {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+.brand span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e1dae9;
+    letter-spacing: 0.5px;
+}
+
+nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* hamburguesa */
+/* HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #ffffff;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+/* NAV LINKS DESKTOP */
+.nav-links {
+    display: flex;
+}
+
+/* =========================
+   NAVBAR BASE
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 5000;
+    backdrop-filter: blur(8px);
+    background: #f8f4ef;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    min-height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.brand span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #7a3db8;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   LINKS DESKTOP
+========================= */
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #7a3db8;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   HAMBURGUESA
+========================= */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 60;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #7a3db8;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2100;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: #a36dd8;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        z-index: 2050;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 90%;
+        max-width: 320px;
+        padding: 12px 16px;
+        text-align: center;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   HERO BANNER
+========================= */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('../assets/fondohero.webp');
+    background-size: cover;
+    background-position: center;
+    /* overlay con blend */
+    background-color: #a498af;
+    background-blend-mode: overlay;
+}
+
+/* Overlay sutil general */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    /* sutil sombra para legibilidad */
+    z-index: 1;
+}
+
+/* Contenido */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* sobre el overlay */
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+    color: #5c2e91;
+}
+
+/* Título */
+.hero-content h1 {
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    color: #5c2e91;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    animation: fadeInDown 1.2s ease forwards;
+}
+
+/* Subtítulo */
+.hero-content p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    color: #4a3a70;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* CTA */
+.hero-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.8rem;
+    background-color: #7a3db8;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Hover CTA */
+.hero-cta:hover {
+    background-color: #9d6adf;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================
+   HERO BANNER - MEDIA QUERIES
+========================= */
+
+/* Laptop grande (hasta 1200px) */
+@media (max-width: 1200px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+    }
+
+    .hero-content p {
+        font-size: clamp(1rem, 1.8vw, 1.3rem);
+    }
+}
+
+/* Tablet (hasta 768px) */
+@media (max-width: 768px) {
+    .hero {
+        height: 65vh;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Celular (hasta 480px) */
+@media (max-width: 480px) {
+    .hero {
+        height: 55vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        padding: 0 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PRODUCTS */
+.products {
+    background: var(--crema);
+    padding: 4rem 1rem;
+}
+
+.products h2 {
+    text-align: center;
+    color: var(--violeta);
+    margin-bottom: 3rem;
+}
+
+/* =========================
+   GRID DE CARDS
+   - Responsive automático
+   - Todas las cards ocupan el mismo alto
+========================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    grid-auto-rows: 1fr;
+}
+
+
+
+/* =========================
+   CARD CONTENEDOR
+   - Flex column para control interno
+========================= */
+.card {
+    background: #fff;
+    border-radius: 20px 10px 20px 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(122, 61, 184, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto hover sutil (no agresivo) */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 35px rgba(122, 61, 184, 0.35);
+}
+
+
+/* =========================
+   IMAGEN
+   - Altura fija para todas
+   - Nunca deforma
+========================= */
+.card img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background-color: #f6f2ec;
+    padding: 10px;
+
+}
+
+/* =========================
+   CUERPO DE CARD
+   - Flex para empujar CTA abajo
+========================= */
+.card-body {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* ocupa espacio restante */
+}
+
+/* =========================
+   TÍTULO
+========================= */
+.card-body h3 {
+    color: var(--violeta);
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   PRECIO
+========================= */
+.price {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* =========================
+   DESCRIPCIÓN
+   - Limitada a 2 líneas
+   - Mantiene altura pareja
+========================= */
+.description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* máximo 2 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* =========================
+   BOTÓN "VER MÁS"
+   - Siempre alineado abajo
+========================= */
+.btn-vermas {
+    margin-top: auto;
+    /* empuja el botón abajo */
+    display: block;
+    text-align: center;
+    color: #fff;
+    padding: 0.7rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    background: linear-gradient(135deg, #7a3db8, #d39df7);
+    transition: all 0.3s ease;
+}
+
+/* Hover del botón */
+.btn-vermas:hover {
+    background: linear-gradient(135deg, #d39df7, #7a3db8);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(122, 61, 184, 0.3);
+}
+
+
+
+
+
+/* =========================
+   RESPONSIVE FINO
+========================= */
+@media (max-width: 480px) {
+    .card img {
+        height: 200px;
+        /* ajusta imagen en móviles */
+    }
+}
+
+
+
+
+
+
+
+/* slider cards*/
+/* =========================
+   SLIDER DENTRO DE CARD
+========================= */
+
+.card-slider {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #f8f4ef;
+}
+
+/* ocultar radios */
+.card-slider input {
+    display: none;
+}
+
+/* CONTENEDOR DEL SLIDER */
+.slider-images {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* CADA SLIDE */
+.slider-images img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    /* 🔥 CLAVE DEL ARREGLO */
+    display: block;
+    margin: auto;
+    background: #f8f4ef;
+}
+
+/* =========================
+   CONTROLES
+========================= */
+
+/* Slide 1 */
+#ali-1:checked~.slider-images,
+#agus-1:checked~.slider-images,
+#flora-1:checked~.slider-images,
+#aurora-1:checked~.slider-images,
+#herminia-1:checked~.slider-images {
+    transform: translateX(0%);
+}
+
+/* Slide 2 */
+#ali-2:checked~.slider-images,
+#agus-2:checked~.slider-images,
+#flora-2:checked~.slider-images,
+#aurora-2:checked~.slider-images,
+#herminia-2:checked~.slider-images {
+    transform: translateX(-100%);
+}
+
+/* Slide 3 */
+#ali-3:checked~.slider-images,
+#agus-3:checked~.slider-images,
+#aurora-3:checked~.slider-images,
+#herminia-3:checked~.slider-images {
+    transform: translateX(-200%);
+}
+
+/* Slide 4 (solo herminia) */
+#herminia-4:checked~.slider-images {
+    transform: translateX(-300%);
+}
+
+/* =========================
+   DOTS
+========================= */
+
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.slider-dots label {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#aurora-1:checked~.slider-dots label[for="aurora-1"],
+#aurora-2:checked~.slider-dots label[for="aurora-2"],
+#aurora-3:checked~.slider-dots label[for="aurora-3"] {
+    background: #7a3db8;
+}
+
+#herminia-1:checked~.slider-dots label[for="herminia-1"],
+#herminia-2:checked~.slider-dots label[for="herminia-2"],
+#herminia-3:checked~.slider-dots label[for="herminia-3"],
+#herminia-4:checked~.slider-dots label[for="herminia-4"] {
+    background: #7a3db8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .card-slider {
+        height: 180px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* CONTACT */
+/* =========================
+   SECCIÓN CONTACTO
+========================= */
+
+.contact {
+    position: relative;
+    padding: 6rem 2rem;
+    background-image: url('../assets/fondocontacto.webp');
+    /* Fondo macramé minimalista */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #5c2e91;
+    /* Violeta marca */
+    overflow: hidden;
+}
+
+/* Overlay suave para legibilidad */
+.contact::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    /* sutil crema */
+    z-index: 1;
+}
+
+/* Contenido por encima del overlay */
+.contact * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Título de sección */
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 2rem;
+    color: #5c2e91;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Caja con info de contacto */
+.contact-box {
+    background: rgba(255, 255, 255, 0.85);
+    /* caja semi-transparente crema */
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Párrafos e íconos */
+.contact-box p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Links de contacto */
+.contact-box a {
+    color: #7a3db8;
+    /* violeta marca */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-box a:hover {
+    color: #9d6adf;
+    text-decoration: underline;
+}
+
+/* =========================
+   ICONOS CONTACTO
+========================= */
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-box a:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+/* Ajustes móviles */
+@media screen and (max-width: 768px) {
+    .contact-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .contact-box {
+        padding: 1.5rem 2rem;
+    }
+
+    .contact h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+    }
+
+    .contact-box p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(135deg, #7a3db8, #9d6adf);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+}

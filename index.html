@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="lv-header" id="lv-header">
+        <div class="lv-header__container">
+
+            <!-- Marca -->
+            <div class="lv-header__brand">
+                <img src="./assets/logo.png" alt="Llama Violeta Logo" class="lv-header__logo-img">
+                <span class="lv-header__name">Llama Violeta</span>
+            </div>
+
+            <!-- Navegación -->
+            <nav class="lv-header__nav">
+                <a href="#coleccion" class="lv-header__link">Colección</a>
+                <a href="#proceso" class="lv-header__link">Proceso</a>
+                <a href="#contacto" class="lv-header__link">Contacto</a>
+            </nav>
+
+            <!-- CTA -->
+            <div class="lv-header__cta">
+                <a href="#coleccion" class="lv-header__button">Ver piezas</a>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="lv-hero" id="inicio">
+        <div class="lv-hero__container">
+
+            <!-- Texto -->
+            <div class="lv-hero__content">
+                <p class="lv-hero__eyebrow">Hecho a mano · Sin apuro</p>
+
+                <h1 class="lv-hero__title">
+                    Carteras que no siguen<br>
+                    tendencias.
+                </h1>
+
+                <p class="lv-hero__description">
+                    Piezas artesanales creadas para acompañar historias reales,
+                    no temporadas pasajeras.
+                </p>
+
+                <a href="#coleccion" class="lv-hero__cta">
+                    Descubrir la colección
+                </a>
+            </div>
+
+            <!-- Imagen -->
+            <div class="lv-hero__media">
+                <img src="./assets/D_NQ_NP_841344-MLA103149430907_122025-O.webp"
+                    alt="Detalle artesanal de cartera" class="lv-hero__image" />
+            </div>
+
+        </div>
+    </section>
+
+    <section class="lv-manifesto" id="manifesto">
+        <div class="lv-manifesto__container lv-reveal">
+
+            <div class="lv-manifesto__content">
+                <h2 class="lv-manifesto__title">
+                    No creemos en producir rápido.
+                </h2>
+
+                <p class="lv-manifesto__text">
+                    Llama Violeta nace del deseo de crear objetos que respeten el tiempo,
+                    la materia y a quien los usa. Cada pieza es pensada para durar,
+                    acompañar y transformarse con el paso de los años.
+                </p>
+
+                <p class="lv-manifesto__text">
+                    No seguimos temporadas ni cantidades. Trabajamos en series pequeñas,
+                    con procesos manuales y decisiones conscientes.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="lv-process" id="proceso">
+        <div class="lv-process__container">
+
+            <header class="lv-process__header lv-reveal">
+                <h2 class="lv-process__title">Cada pieza tiene su tiempo</h2>
+                <p class="lv-process__subtitle">
+                    Trabajamos en pequeñas series, respetando cada etapa del proceso.
+                </p>
+            </header>
+
+            <div class="lv-process__timeline">
+
+                <!-- Paso 1 -->
+                <article class="lv-process__step lv-reveal lv-step--left">
+                    <div class="lv-process__media">
+                        <img src="./assets/materialseleccion.webp"
+                            alt="Selección de materiales">
+                    </div>
+                    <div class="lv-process__content">
+                        <span class="lv-process__eyebrow">Paso 01</span>
+                        <h3 class="lv-process__step-title">Selección del material</h3>
+                        <p class="lv-process__text">
+                            Elegimos materiales nobles por su textura, resistencia y forma de envejecer.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Paso 2 -->
+                <article class="lv-process__step lv-reveal lv-step--right">
+                    <div class="lv-process__media">
+                        <img src="./assets/cortemanual.webp" alt="Corte manual">
+                    </div>
+                    <div class="lv-process__content">
+                        <span class="lv-process__eyebrow">Paso 02</span>
+                        <h3 class="lv-process__step-title">Corte manual</h3>
+                        <p class="lv-process__text">
+                            Cada pieza se corta a mano, respetando el carácter único del material.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Paso 3 -->
+                <article class="lv-process__step lv-reveal lv-step--left">
+                    <div class="lv-process__media">
+                        <img src="./assets/costuraartesanal.jpg" alt="Costura artesanal">
+                    </div>
+                    <div class="lv-process__content">
+                        <span class="lv-process__eyebrow">Paso 03</span>
+                        <h3 class="lv-process__step-title">Costura artesanal</h3>
+                        <p class="lv-process__text">
+                            Unimos cada parte con costuras pensadas para durar y acompañar el uso diario.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Paso 4 -->
+                <article class="lv-process__step lv-reveal lv-step--right">
+                    <div class="lv-process__media">
+                        <img src="./assets/terminacion.jpg" alt="Terminación final">
+                    </div>
+                    <div class="lv-process__content">
+                        <span class="lv-process__eyebrow">Paso 04</span>
+                        <h3 class="lv-process__step-title">Terminación y control</h3>
+                        <p class="lv-process__text">
+                            Revisamos cada detalle antes de que la pieza encuentre a quien la use.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <section class="lv-collection" id="coleccion">
+        <div class="lv-collection__container">
+
+            <header class="lv-collection__header lv-reveal">
+                <h2 class="lv-collection__title">Colección</h2>
+                <p class="lv-collection__subtitle">
+                    Piezas creadas en pequeñas series, cada una con su carácter.
+                </p>
+            </header>
+
+            <div class="lv-collection__grid">
+
+                <!-- Card -->
+                <article class="lv-product-card lv-reveal" data-product-id="1">
+                    <div class="lv-product-card__media">
+                        <img src="./assets/Carteras/agus1.png"
+                            alt="Cartera artesanal modelo Agus" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera Agus</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="2">
+                    <div class="lv-product-card__media">
+                        <img src="./assets/Carteras/ali1.png"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 2</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="3">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 3</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="4">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 4</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="5">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 5</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="6">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 6</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="7">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 7</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="8">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 8</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="9">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 9</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="10">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 10</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="11">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 11</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+                <article class="lv-product-card lv-reveal" data-product-id="12">
+                    <div class="lv-product-card__media">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                    </div>
+
+                    <div class="lv-product-card__content">
+                        <h3 class="lv-product-card__name">Cartera 12</h3>
+                        <p class="lv-product-card__description">
+                            Compacta, pensada para el uso diario.
+                        </p>
+
+                        <button class="lv-product-card__button">
+                            VER MÁS
+                        </button>
+                    </div>
+                </article>
+
+
+                <!-- Repetir cards -->
+                <!-- … -->
+
+            </div>
+        </div>
+    </section>
+
+    <section class="lv-author" id="autoria">
+        <div class="lv-author__container">
+
+            <div class="lv-author__content lv-reveal">
+                <h2 class="lv-author__title">
+                    Cada cartera la hace la misma persona
+                </h2>
+
+                <div class="lv-author__text">
+                    <p>
+                        Las piezas de <strong>Llama Violeta</strong> no salen de una línea de producción.
+                        Se hacen a mano, una por una, en macramé.
+                    </p>
+
+                    <p>
+                        Cada cartera puede presentar pequeñas variaciones propias del trabajo artesanal.
+                        No buscamos que sean idénticas, buscamos que sean reales.
+                    </p>
+
+                    <p>
+                        Podés elegir colores, detalles y formato.
+                        El resultado final siempre es único.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="lv-cta" id="contacto">
+        <div class="lv-cta__container">
+
+            <div class="lv-cta__content lv-reveal">
+                <h2 class="lv-cta__title">
+                    ¿Querés una cartera hecha para vos?
+                </h2>
+
+                <p class="lv-cta__text">
+                    Podemos hablar sobre colores, detalles y tiempos.
+                    Cada pieza se arma de manera personalizada.
+                </p>
+
+                <button class="lv-cta__button" type="button">
+                    Consultar disponibilidad
+                </button>
+            </div>
+
+        </div>
+    </section>
+    <footer class="lv-footer">
+        <div class="lv-footer__container">
+
+            <div class="lv-footer__content">
+                <p class="lv-footer__brand">
+                    Llama Violeta
+                </p>
+
+                <p class="lv-footer__description">
+                    Carteras artesanales en macramé, hechas a mano,
+                    una por una.
+                </p>
+
+                <div class="lv-footer__actions">
+                    <button class="lv-footer__link" type="button">
+                        Consultas y pedidos
+                    </button>
+                </div>
+            </div>
+
+            <div class="lv-footer__bottom">
+                <span class="lv-footer__copyright">
+                    © Llama Violeta
+                </span>
+            </div>
+            <div class="lv-footer__signature">
+                <span>Desarrollado por </span>
+                <a href="https://www.initiumq.com" target="_blank" rel="noopener noreferrer">
+                    InitiumQuest
+                </a>
+            </div>
+
+        </div>
+    </footer>
+    <script src="./js/productos.js"></script>
+
+
+
+    <script>
+        const revealItems = document.querySelectorAll(".lv-reveal");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transitionDelay = `${index * 80}ms`;
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        revealItems.forEach((item) => observer.observe(item));
+    </script>
+    <script>
+        const revealElements = document.querySelectorAll(".lv-reveal");
+
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.2,
+            }
+        );
+
+        revealElements.forEach((el) => {
+            revealObserver.observe(el);
+        });
+    </script>
+    <script>
+        const header = document.getElementById("lv-header");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 20) {
+                header.classList.add("is-scrolled");
+            } else {
+                header.classList.remove("is-scrolled");
+            }
+        });
+    </script>
+    <script>
+        document.querySelectorAll(".lv-product-card__button").forEach(button => {
+            button.addEventListener("click", (e) => {
+
+                const card = e.target.closest(".lv-product-card");
+                const id = card.dataset.productId;
+
+                localStorage.setItem("selectedProductId", id);
+
+                window.location.href = "./productos/producto.html";
+
+            });
+        });
+    </script>
+</body>
+
+</html>
