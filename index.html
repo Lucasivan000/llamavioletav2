@@ -18,8 +18,16 @@
                 <span class="lv-header__name">Llama Violeta</span>
             </div>
 
+            <!-- Botón hamburguesa -->
+            <button class="lv-header__toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Navegación -->
             <nav class="lv-header__nav">
+                <a href="#inicio" class="lv-header__link">Inicio</a>
                 <a href="#coleccion" class="lv-header__link">Colección</a>
                 <a href="#proceso" class="lv-header__link">Proceso</a>
                 <a href="#contacto" class="lv-header__link">Contacto</a>
@@ -50,6 +58,11 @@
                     no temporadas pasajeras.
                 </p>
 
+                <a href="https://wa.me/549XXXXXXXXXX?text=Hola%20quiero%20consultar%20por%20las%20carteras"
+                    class="lv-hero__cta lv-hero__cta--whatsapp">
+                    Consultar por WhatsApp
+                </a>
+
                 <a href="#coleccion" class="lv-hero__cta">
                     Descubrir la colección
                 </a>
@@ -57,106 +70,38 @@
 
             <!-- Imagen -->
             <div class="lv-hero__media">
-                <img src="./assets/D_NQ_NP_841344-MLA103149430907_122025-O.webp"
-                    alt="Detalle artesanal de cartera" class="lv-hero__image" />
+                <img src="./assets/portada.jpeg" class="lv-hero__image" fetchpriority="high" decoding="async"
+                    alt="Detalle artesanal de cartera" />
             </div>
 
         </div>
     </section>
 
-    <section class="lv-manifesto" id="manifesto">
-        <div class="lv-manifesto__container lv-reveal">
 
-            <div class="lv-manifesto__content">
-                <h2 class="lv-manifesto__title">
-                    No creemos en producir rápido.
-                </h2>
-
-                <p class="lv-manifesto__text">
-                    Llama Violeta nace del deseo de crear objetos que respeten el tiempo,
-                    la materia y a quien los usa. Cada pieza es pensada para durar,
-                    acompañar y transformarse con el paso de los años.
-                </p>
-
-                <p class="lv-manifesto__text">
-                    No seguimos temporadas ni cantidades. Trabajamos en series pequeñas,
-                    con procesos manuales y decisiones conscientes.
-                </p>
-            </div>
-
-        </div>
-    </section>
 
     <section class="lv-process" id="proceso">
         <div class="lv-process__container">
 
-            <header class="lv-process__header lv-reveal">
-                <h2 class="lv-process__title">Cada pieza tiene su tiempo</h2>
+            <header class="lv-process__header">
+                <h2 class="lv-process__title">Materiales que importan</h2>
                 <p class="lv-process__subtitle">
-                    Trabajamos en pequeñas series, respetando cada etapa del proceso.
+                    Trabajamos con hilos seleccionados por su textura, resistencia y forma de acompañar el uso diario.
                 </p>
             </header>
 
-            <div class="lv-process__timeline">
+            <article class="lv-process__single">
+                <div class="lv-process__media">
+                    <img src="./assets/materiales.jpeg" alt="Hilos de macramé utilizados en la producción">
+                </div>
 
-                <!-- Paso 1 -->
-                <article class="lv-process__step lv-reveal lv-step--left">
-                    <div class="lv-process__media">
-                        <img src="./assets/materialseleccion.webp"
-                            alt="Selección de materiales">
-                    </div>
-                    <div class="lv-process__content">
-                        <span class="lv-process__eyebrow">Paso 01</span>
-                        <h3 class="lv-process__step-title">Selección del material</h3>
-                        <p class="lv-process__text">
-                            Elegimos materiales nobles por su textura, resistencia y forma de envejecer.
-                        </p>
-                    </div>
-                </article>
+                <div class="lv-process__content">
+                    <p class="lv-process__text">
+                        Cada cartera nace a partir de materiales nobles, elegidos sin apuro.
+                        Menos pasos visibles, más foco en lo esencial: piezas pensadas para durar.
+                    </p>
+                </div>
+            </article>
 
-                <!-- Paso 2 -->
-                <article class="lv-process__step lv-reveal lv-step--right">
-                    <div class="lv-process__media">
-                        <img src="./assets/cortemanual.webp" alt="Corte manual">
-                    </div>
-                    <div class="lv-process__content">
-                        <span class="lv-process__eyebrow">Paso 02</span>
-                        <h3 class="lv-process__step-title">Corte manual</h3>
-                        <p class="lv-process__text">
-                            Cada pieza se corta a mano, respetando el carácter único del material.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Paso 3 -->
-                <article class="lv-process__step lv-reveal lv-step--left">
-                    <div class="lv-process__media">
-                        <img src="./assets/costuraartesanal.jpg" alt="Costura artesanal">
-                    </div>
-                    <div class="lv-process__content">
-                        <span class="lv-process__eyebrow">Paso 03</span>
-                        <h3 class="lv-process__step-title">Costura artesanal</h3>
-                        <p class="lv-process__text">
-                            Unimos cada parte con costuras pensadas para durar y acompañar el uso diario.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Paso 4 -->
-                <article class="lv-process__step lv-reveal lv-step--right">
-                    <div class="lv-process__media">
-                        <img src="./assets/terminacion.jpg" alt="Terminación final">
-                    </div>
-                    <div class="lv-process__content">
-                        <span class="lv-process__eyebrow">Paso 04</span>
-                        <h3 class="lv-process__step-title">Terminación y control</h3>
-                        <p class="lv-process__text">
-                            Revisamos cada detalle antes de que la pieza encuentre a quien la use.
-                        </p>
-                    </div>
-                </article>
-
-            </div>
         </div>
     </section>
     <section class="lv-collection" id="coleccion">
@@ -174,8 +119,7 @@
                 <!-- Card -->
                 <article class="lv-product-card lv-reveal" data-product-id="1">
                     <div class="lv-product-card__media">
-                        <img src="./assets/Carteras/agus1.png"
-                            alt="Cartera artesanal modelo Agus" loading="lazy" />
+                        <img src="./assets/Carteras/agus1.png" alt="Cartera artesanal modelo Agus" loading="lazy" />
                     </div>
 
                     <div class="lv-product-card__content">
@@ -191,8 +135,7 @@
                 </article>
                 <article class="lv-product-card lv-reveal" data-product-id="2">
                     <div class="lv-product-card__media">
-                        <img src="./assets/Carteras/ali1.png"
-                            alt="Cartera artesanal modelo Alba" loading="lazy" />
+                        <img src="./assets/Carteras/ali1.png" alt="Cartera artesanal modelo Alba" loading="lazy" />
                     </div>
 
                     <div class="lv-product-card__content">
@@ -385,49 +328,26 @@
         </div>
     </section>
 
-    <section class="lv-author" id="autoria">
-        <div class="lv-author__container">
+    <section class="lv-author-cta" id="contacto">
+        <div class="lv-author-cta__container">
 
-            <div class="lv-author__content lv-reveal">
-                <h2 class="lv-author__title">
-                    Cada cartera la hace la misma persona
+            <div class="lv-author-cta__content lv-reveal">
+                <h2 class="lv-author-cta__title">
+                    Cada cartera se hace a mano, para una sola persona
                 </h2>
 
-                <div class="lv-author__text">
-                    <p>
-                        Las piezas de <strong>Llama Violeta</strong> no salen de una línea de producción.
-                        Se hacen a mano, una por una, en macramé.
-                    </p>
-
-                    <p>
-                        Cada cartera puede presentar pequeñas variaciones propias del trabajo artesanal.
-                        No buscamos que sean idénticas, buscamos que sean reales.
-                    </p>
-
-                    <p>
-                        Podés elegir colores, detalles y formato.
-                        El resultado final siempre es único.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="lv-cta" id="contacto">
-        <div class="lv-cta__container">
-
-            <div class="lv-cta__content lv-reveal">
-                <h2 class="lv-cta__title">
-                    ¿Querés una cartera hecha para vos?
-                </h2>
-
-                <p class="lv-cta__text">
-                    Podemos hablar sobre colores, detalles y tiempos.
-                    Cada pieza se arma de manera personalizada.
+                <p class="lv-author-cta__text">
+                    En <strong>Llama Violeta</strong> no trabajamos en serie.
+                    Cada pieza se realiza una por una, en macramé, aceptando
+                    las pequeñas variaciones que hacen único a cada objeto.
                 </p>
 
-                <button class="lv-cta__button" type="button">
+                <p class="lv-author-cta__text">
+                    Podés elegir colores, detalles y formato.
+                    El resultado final siempre es una cartera hecha especialmente para vos.
+                </p>
+
+                <button class="lv-author-cta__button" type="button">
                     Consultar disponibilidad
                 </button>
             </div>
@@ -469,6 +389,45 @@
         </div>
     </footer>
     <script src="./js/productos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const toggle = document.querySelector(".lv-header__toggle");
+            const nav = document.querySelector(".lv-header__nav");
+            const links = document.querySelectorAll(".lv-header__nav a");
+
+            if (!toggle || !nav) return;
+
+            // Abrir / cerrar menú
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("is-open");
+            });
+
+            // Cerrar menú al tocar un link interno
+            links.forEach(link => {
+                link.addEventListener("click", () => {
+                    nav.classList.remove("is-open");
+                });
+            });
+
+            // Cerrar menú al hacer scroll (solo mobile)
+            let lastScroll = window.scrollY;
+
+            window.addEventListener("scroll", () => {
+                const currentScroll = window.scrollY;
+
+                if (
+                    nav.classList.contains("is-open") &&
+                    Math.abs(currentScroll - lastScroll) > 10
+                ) {
+                    nav.classList.remove("is-open");
+                }
+
+                lastScroll = currentScroll;
+            }, { passive: true });
+
+        });
+    </script>
 
 
 
@@ -490,27 +449,7 @@
 
         revealItems.forEach((item) => observer.observe(item));
     </script>
-    <script>
-        const revealElements = document.querySelectorAll(".lv-reveal");
 
-        const revealObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.2,
-            }
-        );
-
-        revealElements.forEach((el) => {
-            revealObserver.observe(el);
-        });
-    </script>
     <script>
         const header = document.getElementById("lv-header");
 
