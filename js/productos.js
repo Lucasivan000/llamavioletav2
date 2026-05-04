@@ -55,7 +55,7 @@ const products = [
         name: "Cartera NUDO",
         subtitle: "Diseño compacto y artesanal.",
         images: [
-            "../assets/Carteras/nudo/nudo.png",
+            "../assets/Carteras/nudo/nudo3.png",
             "../assets/Carteras/nudo/nudo1.png",
             "../assets/Carteras/nudo/nudo2.png"
 
