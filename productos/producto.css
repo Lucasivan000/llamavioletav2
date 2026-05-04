@@ -149,7 +149,7 @@ body {
 
 
 /* ===========================
-   HERO
+   HERO + INFO (LAYOUT AJUSTADO)
    =========================== */
 
 .lvp-hero {
@@ -161,125 +161,116 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--lvp-space-lg);
-    align-items: center;
-}
-
-.lvp-hero__media {
-    background-color: var(--lvp-color-surface);
-    border-radius: var(--lvp-radius-md);
-    padding: var(--lvp-space-md);
+    gap: var(--lvp-space-xl);
+    align-items: start;
 }
 
 .lvp-hero__media img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    border-radius: var(--lvp-radius-md);
+    background-color: var(--lvp-color-surface);
+}
+
+/* Contenido derecho */
+.lvp-hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lvp-space-md);
 }
 
 .lvp-hero__title {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: var(--lvp-space-xs);
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.15;
 }
 
 .lvp-hero__subtitle {
-    font-size: var(--lvp-font-size-md);
     color: var(--lvp-color-text-muted);
+    font-size: var(--lvp-font-size-md);
 }
 
 /* ===========================
-   GALERÍA
-   =========================== */
-
-.lvp-gallery {
-    padding: var(--lvp-space-lg);
-}
-
-.lvp-gallery__container {
-    max-width: var(--lvp-max-width);
-    margin: 0 auto;
-}
-
-.lvp-gallery__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--lvp-space-sm);
-}
-
-.lvp-gallery__grid img {
-    border-radius: var(--lvp-radius-md);
-    object-fit: contain;
-    background-color: var(--lvp-color-surface);
-    padding: var(--lvp-space-xs);
-}
-
-/* ===========================
-   INFO
+   INFO (DENTRO DEL HERO)
    =========================== */
 
 .lvp-info {
-    padding: var(--lvp-space-xl) var(--lvp-space-lg);
+    padding: 0;
 }
 
 .lvp-info__container {
-    max-width: 640px;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: var(--lvp-space-md);
 }
 
 .lvp-info__block h2 {
-    font-size: var(--lvp-font-size-lg);
-    font-weight: 500;
+    font-size: var(--lvp-font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--lvp-color-text-muted);
     margin-bottom: var(--lvp-space-xxs);
 }
 
-.lvp-info__block p {
-    font-size: var(--lvp-font-size-md);
-    line-height: 1.6;
-    color: var(--lvp-color-text-muted);
+/* Descripción */
+.lvp-info__block:first-child p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 42ch;
+}
+
+/* Precio */
+.lvp-info__block:nth-child(2) p {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--lvp-color-text);
 }
 
 /* ===========================
-   CTA
+   CTA DENTRO DEL HERO
    =========================== */
 
-.lvp-cta {
-    padding: var(--lvp-space-xl) var(--lvp-space-lg);
+.lvp-info__cta {
+    margin-top: var(--lvp-space-md);
+}
+
+.lvp-info__cta .lvp-cta__button {
+    display: inline-block;
+    width: 100%;
     text-align: center;
-}
-
-.lvp-cta__text {
-    font-size: var(--lvp-font-size-md);
-    margin-bottom: var(--lvp-space-sm);
-}
-
-.lvp-cta__button {
     background-color: var(--lvp-color-primary);
     color: #fff;
-    padding: 14px 32px;
+    padding: 18px 32px;
     border-radius: var(--lvp-radius-md);
-    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     transition: background-color var(--lvp-transition-base),
         transform var(--lvp-transition-fast);
 }
 
-.lvp-cta__button:hover {
+.lvp-info__cta .lvp-cta__button:hover {
     background-color: var(--lvp-color-accent);
     transform: translateY(-1px);
 }
 
-@media (max-width: 768px) {
-    .lvp-hero__container {
-        grid-template-columns: 1fr;
-    }
+/* ===========================
+   GALERÍA ABAJO
+   =========================== */
 
-    .lvp-gallery__grid {
-        grid-template-columns: 1fr;
-    }
+.lvp-gallery {
+    padding: var(--lvp-space-xl) var(--lvp-space-lg);
 }
+
+.lvp-gallery__grid {
+    max-width: var(--lvp-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--lvp-space-xs);
+}
+
+
 
 
 
@@ -367,4 +358,114 @@ body {
 .lvp-footer__signature:hover {
     opacity: 0.85;
     text-decoration: underline;
+}
+
+
+
+
+/* medias */
+/* ===========================
+   RESPONSIVE – TABLET
+   =========================== */
+
+@media (max-width: 1024px) {
+
+    .lvp-hero {
+        padding: var(--lvp-space-lg) var(--lvp-space-md);
+    }
+
+    .lvp-hero__container {
+        gap: var(--lvp-space-lg);
+    }
+
+    .lvp-gallery {
+        padding: var(--lvp-space-lg) var(--lvp-space-md);
+    }
+
+    .lvp-gallery__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===========================
+   RESPONSIVE – MOBILE
+   =========================== */
+
+@media (max-width: 768px) {
+
+    /* HERO */
+    .lvp-hero {
+        padding: var(--lvp-space-md);
+    }
+
+    .lvp-hero__container {
+        grid-template-columns: 1fr;
+        gap: var(--lvp-space-md);
+    }
+
+    .lvp-hero__media img {
+        border-radius: var(--lvp-radius-md);
+    }
+
+    .lvp-hero__title {
+        font-size: 1.8rem;
+    }
+
+    .lvp-hero__subtitle {
+        font-size: var(--lvp-font-size-sm);
+    }
+
+    /* INFO */
+    .lvp-info__block:first-child p {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .lvp-info__block:nth-child(2) p {
+        font-size: 1.9rem;
+    }
+
+    /* CTA */
+    .lvp-info__cta {
+        margin-top: var(--lvp-space-sm);
+    }
+
+    .lvp-info__cta .lvp-cta__button {
+        padding: 16px 24px;
+        font-size: 0.85rem;
+    }
+
+    /* GALERÍA */
+    .lvp-gallery {
+        padding: var(--lvp-space-lg) var(--lvp-space-md);
+    }
+
+    .lvp-gallery__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--lvp-space-xs);
+    }
+
+    /* FOOTER */
+    .lvp-footer {
+        padding: var(--lvp-space-md);
+    }
+}
+
+/* ===========================
+   RESPONSIVE – MOBILE CHICO
+   =========================== */
+
+@media (max-width: 420px) {
+
+    .lvp-hero__title {
+        font-size: 1.6rem;
+    }
+
+    .lvp-info__block:nth-child(2) p {
+        font-size: 1.7rem;
+    }
+
+    .lvp-cta__button {
+        letter-spacing: 0.1em;
+    }
 }

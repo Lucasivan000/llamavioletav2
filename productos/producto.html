@@ -18,35 +18,45 @@
 
         </div>
     </header>
+
+
     <main class="lvp-product">
 
-        <!-- HERO PRODUCTO -->
         <section class="lvp-hero">
             <div class="lvp-hero__container">
 
+                <!-- Foto principal -->
                 <div class="lvp-hero__media">
-                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"
-                        alt="Cartera Alba en macramé" />
+                    <img src="" alt="">
                 </div>
 
+                <!-- Info producto -->
                 <div class="lvp-hero__content">
-                    <h1 class="lvp-hero__title">Cartera Alba</h1>
-                    <p class="lvp-hero__subtitle">
-                        Hecha a mano en macramé. Personalizable.
-                    </p>
-                </div>
+                    <h1 class="lvp-hero__title"></h1>
+                    <p class="lvp-hero__subtitle"></p>
 
-            </div>
-        </section>
+                    <section class="lvp-info">
+                        <div class="lvp-info__container">
 
-        <!-- GALERÍA -->
-        <section class="lvp-gallery">
-            <div class="lvp-gallery__container">
+                            <div class="lvp-info__block">
+                                <h2>Descripción</h2>
+                                <p></p>
+                            </div>
 
-                <div class="lvp-gallery__grid">
-                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990" alt="">
-                    <img src="https://images.unsplash.com/photo-1593032465175-481ac7f4011d" alt="">
-                    <img src="https://images.unsplash.com/photo-1585386959984-a41552231693" alt="">
+                            <div class="lvp-info__block">
+                                <h2>Precio</h2>
+                                <p></p>
+                            </div>
+
+                            <!-- CTA debajo del precio -->
+                            <div class="lvp-info__cta">
+                                <a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="lvp-cta__button">
+                                    Consultar por WhatsApp
+                                </a>
+                            </div>
+
+                        </div>
+                    </section>
                 </div>
 
             </div>
@@ -57,56 +67,28 @@
             <div class="lvp-info__container">
 
                 <div class="lvp-info__block">
-                    <h2>Historia</h2>
-                    <p>
-                        Cada cartera se teje a mano, sin moldes industriales.
-                        Las variaciones propias del macramé forman parte de su identidad.
-                    </p>
+                    <h2>Descripción</h2>
+                    <p></p>
                 </div>
 
                 <div class="lvp-info__block">
-                    <h2>Detalles</h2>
-                    <p>
-                        Cada cartera se teje a mano, sin moldes industriales.
-                        Las variaciones propias del macramé forman parte de su identidad.
-                    </p>
-                </div>
-
-                <div class="lvp-info__block">
-                    <h2>Personalización</h2>
-                    <p>
-                        Podés elegir colores, combinaciones y pequeños detalles.
-                        El armado comienza luego de la consulta.
-                    </p>
-                </div>
-
-                <div class="lvp-info__block">
-                    <h2>Tiempos</h2>
-                    <p>
-                        Al tratarse de un trabajo artesanal, los tiempos pueden variar
-                        según el modelo y la personalización elegida.
-                    </p>
+                    <h2>Precio</h2>
+                    <p></p>
                 </div>
 
             </div>
         </section>
 
-        <!-- CTA -->
-        <section class="lvp-cta">
-            <div class="lvp-cta__container">
-
-                <p class="lvp-cta__text">
-                    ¿Querés hablar sobre esta cartera?
-                </p>
-
-                <button class="lvp-cta__button">
-                    Consultar este modelo
-                </button>
-
+        <!-- GALERÍA -->
+        <section class="lvp-gallery">
+            <div class="lvp-gallery__container">
+                <div class="lvp-gallery__grid"></div>
             </div>
         </section>
 
     </main>
+
+
     <footer class="lvp-footer">
         <div class="lvp-footer__container">
 
@@ -134,16 +116,15 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
 
-            const id = parseInt(localStorage.getItem("selectedProductId"));
-
+            const id = parseInt(localStorage.getItem("selectedProductId"), 10);
             const product = products.find(p => p.id === id);
 
             if (!product) return;
 
             /* HERO */
             document.querySelector(".lvp-hero__title").textContent = product.name;
-            document.querySelector(".lvp-hero__subtitle").textContent = product.subtitle;
-            document.querySelector(".lvp-hero__media img").src = product.images[0];
+            document.querySelector(".lvp-hero__subtitle").textContent = product.subtitle || "";
+            document.querySelector(".lvp-hero__media img").src = product.images?.[0] || "";
 
             /* GALERÍA */
             const gallery = document.querySelector(".lvp-gallery__grid");
@@ -152,16 +133,26 @@
             product.images.forEach(img => {
                 const el = document.createElement("img");
                 el.src = img;
+                el.alt = product.name;
                 gallery.appendChild(el);
             });
 
-            /* INFO BLOQUES */
+            /* INFO BLOQUES → SOLO DESCRIPCIÓN Y PRECIO */
             const blocks = document.querySelectorAll(".lvp-info__block");
 
-            blocks[0].querySelector("p").textContent = product.historia || "";
-            blocks[1].querySelector("p").textContent = product.details || "";
-            blocks[2].querySelector("p").textContent = product.personalization || "";
-            blocks[3].querySelector("p").textContent = product.times || "";
+            // Descripción
+            if (blocks[0]) {
+                blocks[0].querySelector("p").textContent = product.descripcion || "";
+            }
+
+            // Precio
+            if (blocks[1]) {
+                blocks[1].querySelector("p").textContent = `$${product.precio}`;
+            }
+
+            // Ocultamos los bloques que ya no se usan
+            if (blocks[2]) blocks[2].style.display = "none";
+            if (blocks[3]) blocks[3].style.display = "none";
 
         });
     </script>
