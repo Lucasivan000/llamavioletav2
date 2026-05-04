@@ -89,27 +89,77 @@
     </main>
 
 
-    <footer class="lvp-footer">
-        <div class="lvp-footer__container">
+    <footer class="lv-footer">
+        <div class="lv-footer__container">
 
-            <div class="lvp-footer__brand">
-                <span class="lvp-footer__name">Llama Violeta</span>
-                <button class="lvp-footer__contact" type="button">
-                    Consultas y pedidos
-                </button>
+            <!-- GRID PRINCIPAL -->
+            <div class="lv-footer__grid">
+
+                <!-- COLUMNA IZQUIERDA -->
+                <div class="lv-footer__about">
+                    <h2 class="lv-footer__title">
+                        Cada cartera se hace a mano
+                    </h2>
+
+                    <p class="lv-footer__text">
+                        En <strong>Llama Violeta</strong> no trabajamos en serie.
+                        Cada pieza se realiza una por una, en macramé,
+                        aceptando pequeñas variaciones que hacen único a cada objeto.
+                    </p>
+
+                    <p class="lv-footer__text">
+                        Podés elegir colores, detalles y formato.
+                        El resultado es una cartera hecha especialmente para vos.
+                    </p>
+                </div>
+
+                <!-- COLUMNA DERECHA -->
+                <div class="lv-footer__content">
+                    <p class="lv-footer__brand">
+                        Llama Violeta
+                    </p>
+
+                    <p class="lv-footer__description">
+                        Carteras artesanales en macramé, hechas a mano,
+                        una por una.
+                    </p>
+
+                    <div class="lv-footer__socials">
+                        <a href="https://wa.me/XXXXXXXXXX" target="_blank" rel="noopener noreferrer"
+                            class="lv-footer__social lv-footer__social--wp" aria-label="WhatsApp">
+                            <img src="./assets/iconowp.webp" alt="WhatsApp">
+                            <span>WhatsApp</span>
+                        </a>
+
+                        <a href="https://www.instagram.com/llamavioleta" target="_blank" rel="noopener noreferrer"
+                            class="lv-footer__social lv-footer__social--ig" aria-label="Instagram">
+                            <img src="./assets/iconoig.webp" alt="Instagram">
+                            <span>@llamavioleta</span>
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="lvp-footer__meta">
+            <!-- BASE -->
+            <div class="lv-footer__bottom">
                 <span>© Llama Violeta</span>
-                <span class="lvp-footer__divider">·</span>
-                <a href="https://www.initiumq.com" target="_blank" rel="noopener noreferrer"
-                    class="lvp-footer__signature">
-                    Desarrollado por InitiumQuest
-                </a>
+
+                <span class="lv-footer__signature">
+                    Desarrollado por
+                    <a href="https://www.initiumq.com" target="_blank" rel="noopener noreferrer">
+                        InitiumQuest
+                    </a>
+                </span>
             </div>
 
         </div>
     </footer>
+    <div class="lvp-lightbox" id="lvpLightbox">
+        <button class="lvp-lightbox__close" id="lvpLightboxClose">×</button>
+
+        <img class="lvp-lightbox__img" id="lvpLightboxImg" src="" alt="">
+    </div>
 
     <script src="../js/productos.js"></script>
 
@@ -153,6 +203,45 @@
             // Ocultamos los bloques que ya no se usan
             if (blocks[2]) blocks[2].style.display = "none";
             if (blocks[3]) blocks[3].style.display = "none";
+
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const lightbox = document.getElementById("lvpLightbox");
+            const lightboxImg = document.getElementById("lvpLightboxImg");
+            const closeBtn = document.getElementById("lvpLightboxClose");
+
+            const images = document.querySelectorAll(".lvp-gallery__grid img");
+
+            function openLightbox(src) {
+                lightboxImg.src = src;
+                lightbox.classList.add("is-active");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove("is-active");
+                lightboxImg.src = "";
+                document.body.style.overflow = "";
+            }
+
+            images.forEach(img => {
+                img.addEventListener("click", () => {
+                    openLightbox(img.src);
+                });
+            });
+
+            closeBtn.addEventListener("click", closeLightbox);
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") closeLightbox();
+            });
 
         });
     </script>

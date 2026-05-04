@@ -10,7 +10,7 @@ const products = [
             "../assets/Carteras/nube/nube3.png"
         ],
         descripcion: "Cartera hecha a mano en cordón de algodón color crudo de 4 mm, con manija circular de madera de 12 cm de diámetro. Medidas aproximadas: 21 × 36 cm. Cada cartera tiene detalles únicos que la hacen irrepetible.",
-        precio: "$75.000"
+        precio: "75.000"
     },
 
     {
@@ -23,7 +23,7 @@ const products = [
             "../assets/Carteras/cielo/cielo2.png"
         ],
         descripcion: "Cartera hecha a mano con cordón de algodón de 7 mm color crudo y manija de madera laqueada de 13 × 9 cm. Terminación en flecos. Medidas aproximadas: 22 × 50 cm.",
-        precio: "$75.000"
+        precio: "75.000"
     },
 
     {
@@ -34,7 +34,7 @@ const products = [
             "../assets/Carteras/tierra/tierra.png"
         ],
         descripcion: "Cartera hecha a mano color camel con manija desmontable confeccionada en hilo de algodón, tejida con detalle de ochos de 5 cm por 95 cm de largo. Tejida en cordón relleno de algodón de 7 mm. Contiene en su interior una bolsa de lienzo de algodón. Medidas aproximadas: 28 × 38 cm.",
-        precio: "$90.000"
+        precio: "90.000"
     },
 
     {
@@ -47,7 +47,7 @@ const products = [
             "../assets/Carteras/amor/amor2.png"
         ],
         descripcion: "Cartera hecha a mano con manija desmontable, tejida en cordón de algodón de 7 mm. Color amarillo con detalles en fucsia. En su interior contiene una bolsa de lienzo de algodón. Medidas aproximadas: 26 × 38 cm. Manija desmontable: 118 cm.",
-        precio: "$90.000"
+        precio: "90.000"
     },
 
     {
@@ -61,7 +61,7 @@ const products = [
 
         ],
         descripcion: "Cartera hecha a mano realizada con soga de algodón color crudo, con cierre a contratono en color camel. En su interior contiene una bolsa de lienzo de algodón. Medidas aproximadas: 27 × 27 cm.",
-        precio: "$50.000"
+        precio: "50.000"
     },
 
     {
@@ -76,7 +76,7 @@ const products = [
             "../assets/Carteras/portacel/portacelular5.png"
         ],
         descripcion: "Hechos con hilo de algodón en colores camel, visón, crudo y rosa vintage. Diferentes largos de manija para llevar como bandolera o al hombro. Medidas aproximadas: Bicolor: cuerpo de 11 × 21 cm, largo de correa 114 cm. Visón con flecos: cuerpo de 11,5 × 17 cm, largo de correa 100 cm. Rosa vintage: cuerpo de 10,5 × 17,5 cm, largo de correa 58 cm. Camel: cuerpo de 10 × 17 cm, largo de correa 114 cm. Las medidas de las correas están tomadas en su totalidad.",
-        precio: "$30.000"
+        precio: "30.000"
     },
 
     {
@@ -91,7 +91,7 @@ const products = [
 
         ],
         descripcion: "Cartera realizada a mano con hilo de algodón crudo de 4 mm. Manija de madera tejida con el mismo hilo en color camel, con detalles originales y divertidos. Medidas aproximadas: 24 × 44 cm.",
-        precio: "$90.000"
+        precio: "90.000"
     },
 
     {
@@ -106,7 +106,7 @@ const products = [
 
         ],
         descripcion: "Cartera hecha a mano con soga de algodón de 4 mm en color crudo. Cuenta con manijas incorporadas y correa desmontable para permitir un doble uso. Medidas aproximadas: 24 × 25 cm.",
-        precio: "$90.000"
+        precio: "90.000"
     },
 
     {
@@ -121,7 +121,7 @@ const products = [
             "../assets/Carteras/flora/flora5.png"
         ],
         descripcion: "Carterita hecha en macramé totalmente a mano, realizada en hilo de algodón crudo y rosado. Medidas aproximadas: 17 × 19 cm.",
-        precio: "$60.000"
+        precio: "60.000"
     },
     {
         id: 10,
@@ -147,7 +147,7 @@ const products = [
 
         ],
         descripcion: "Cartera hecha a mano en macramé con soga de algodón de 4 mm que aporta mayor cuerpo a la pieza. Medidas aproximadas: 25 × 19 cm.",
-        precio: "$90.000"
+        precio: "90.000"
     },
     {
         id: 12,
@@ -163,7 +163,7 @@ const products = [
             "../assets/Carteras/ali/ali7.png"
         ],
         descripcion: "Cartera tejida en macramé, realizada totalmente a mano con soga de algodón de 7 mm. En su interior tiene una bolsa de lienzo de algodón color beige. Medidas aproximadas: 25 × 26 cm.",
-        precio: "$75.000"
+        precio: "75.000"
     },
     {
         id: 13,
@@ -176,7 +176,7 @@ const products = [
             "../assets/Carteras/ana/ana3.png"
         ],
         descripcion: "Cartera de mano color chocolate realizada totalmente a mano con hilo de algodón, con terminación en flecos y botón de madera lustrado en composé. Medidas aproximadas: 23 × 20 cm.",
-        precio: "$85.000"
+        precio: "85.000"
     },
     {
         id: 14,
@@ -190,6 +190,6 @@ const products = [
             
         ],
         descripcion: "Cartera de mano hecha en hilo de algodón azul de 4 mm. En su interior contiene una bolsa de lienzo de algodón color crudo. Medidas aproximadas: 24 × 26 cm.",
-        precio: "$45.000"
+        precio: "45.000"
     }
 ];

@@ -278,86 +278,120 @@ body {
 
 
 
-/* ===========================
-   MINI FOOTER – PRODUCTO
-   =========================== */
-
-.lvp-footer {
-    padding: var(--lvp-space-lg) var(--lvp-space-lg);
-    background-color: var(--lvp-color-bg);
-}
-
-.lvp-footer__container {
-    max-width: var(--lvp-max-width);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--lvp-space-sm);
-}
-
-/* Marca + contacto */
-.lvp-footer__brand {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.lvp-footer__name {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--lvp-color-text);
-}
-
-.lvp-footer__contact {
-    align-self: flex-start;
-    font-size: var(--lvp-font-size-sm);
-    letter-spacing: 0.08em;
-    color: var(--lvp-color-primary);
-    padding: 0;
-    position: relative;
-}
-
-.lvp-footer__contact::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
+/* FOOTER BASE */
+.lv-footer {
     width: 100%;
-    height: 1px;
-    background-color: currentColor;
-    transform-origin: left;
-    transition: transform var(--lvp-transition-fast);
+    background: #0f0f0f;
+    color: #eaeaea;
 }
 
-.lvp-footer__contact:hover::after {
-    transform: scaleX(0.6);
+.lv-footer * {
+    box-sizing: border-box;
 }
 
-/* Meta inferior */
-.lvp-footer__meta {
-    font-size: 0.7rem;
-    color: var(--lvp-color-text-muted);
-    opacity: 0.65;
+.lv-footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 2rem;
+}
+
+/* GRID */
+.lv-footer__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* IZQUIERDA */
+.lv-footer__title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.lv-footer__text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+}
+
+/* DERECHA */
+.lv-footer__brand {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.lv-footer__description {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+/* REDES */
+.lv-footer__socials {
     display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lv-footer__social {
+    display: inline-flex;
     align-items: center;
-}
-
-.lvp-footer__divider {
-    opacity: 0.5;
-}
-
-/* Firma técnica */
-.lvp-footer__signature {
+    gap: 0.6rem;
     text-decoration: none;
     color: inherit;
-    font-weight: 500;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
 }
 
-.lvp-footer__signature:hover {
-    opacity: 0.85;
+.lv-footer__social img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.lv-footer__social:hover {
+    opacity: 1;
+}
+
+/* BASE */
+.lv-footer__bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.lv-footer__signature a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.lv-footer__signature a:hover {
     text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .lv-footer__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .lv-footer__bottom {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
 }
 
 
@@ -445,10 +479,6 @@ body {
         gap: var(--lvp-space-xs);
     }
 
-    /* FOOTER */
-    .lvp-footer {
-        padding: var(--lvp-space-md);
-    }
 }
 
 /* ===========================
@@ -468,4 +498,65 @@ body {
     .lvp-cta__button {
         letter-spacing: 0.1em;
     }
+}
+
+/* ===========================
+   LIGHTBOX FULLSCREEN
+   =========================== */
+
+.lvp-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 9999;
+}
+
+.lvp-lightbox.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Imagen */
+.lvp-lightbox__img {
+    max-width: 92vw;
+    max-height: 88vh;
+    object-fit: contain;
+
+    transform: scale(0.98);
+    transition: transform 0.25s ease;
+}
+
+.lvp-lightbox.is-active .lvp-lightbox__img {
+    transform: scale(1);
+}
+
+/* Botón cerrar */
+.lvp-lightbox__close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+
+    font-size: 2rem;
+    color: #fff;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.lvp-lightbox__close:hover {
+    opacity: 1;
 }
