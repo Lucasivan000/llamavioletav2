@@ -6,10 +6,9 @@ const products = [
         images: [
             "../assets/Carteras/nube/nube.png",
             "../assets/Carteras/nube/nube1.png",
-            "../assets/Carteras/nube/nube2.png",
-            "../assets/Carteras/nube/nube3.png"
+            "../assets/Carteras/nube/nube2.png"
         ],
-        descripcion: "Cartera hecha a mano en cordón de algodón color crudo de 4 mm, con manija circular de madera de 12 cm de diámetro. Medidas aproximadas: 21 × 36 cm. Cada cartera tiene detalles únicos que la hacen irrepetible.",
+        descripcion: "Cartera hecha a mano en cordón de algodón color crudo de 4 mm, con manija circular de madera de 12 cm de diámetro. Medidas aproximadas: 21 × 36 cm.",
         precio: "75.000"
     },
 
@@ -20,7 +19,8 @@ const products = [
         images: [
             "../assets/Carteras/cielo/cielo.png",
             "../assets/Carteras/cielo/cielo1.png",
-            "../assets/Carteras/cielo/cielo2.png"
+            "../assets/Carteras/cielo/cielo2.png",
+            "../assets/Carteras/cielo/cielo3.png"
         ],
         descripcion: "Cartera hecha a mano con cordón de algodón de 7 mm color crudo y manija de madera laqueada de 13 × 9 cm. Terminación en flecos. Medidas aproximadas: 22 × 50 cm.",
         precio: "75.000"
@@ -133,8 +133,9 @@ const products = [
             "../assets/Carteras/aurora/aurora3.png",
             "../assets/Carteras/aurora/aurora4.png"
         ],
-        descripcion: "cartera",
-        precio: "000"
+        descripcion: "Cartera hecha con soga de 7mm de algodón rellena, color verde oliva. Sus medias son 27cm de ancho, 33cm de alto, 3 cm de profundidad. Tiene dos manijas , para llevarla como  más te guste, y una bolsita interior en algodón crudo que se puede sacar"
+,
+        precio: "90.000"
     },
     {
         id: 11,

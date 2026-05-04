@@ -572,10 +572,9 @@ textarea {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(247, 246, 249, 0.96),
-        rgba(247, 246, 249, 0.85));
+    background: linear-gradient(to right,
+            rgba(247, 246, 249, 0.96),
+            rgba(247, 246, 249, 0.85));
 }
 
 /* ===========================
@@ -791,32 +790,68 @@ textarea {
 }
 
 /* Button */
-.lv-product-card__button {
-    align-self: flex-start;
-    background: none;
-    border: none;
-    padding: 0;
+button.lv-product-card__button,
+a.lv-product-card__button {
+    all: unset;
+
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 12px !important;
+    margin: 0;
+
     font-size: var(--lv-font-size-sm);
     letter-spacing: 0.08em;
-    color: var(--lv-color-primary);
+
+    color: #8A7BB0 !important;
+    /* violeta visible desde el inicio */
     cursor: pointer;
+
     position: relative;
+    user-select: none;
+
+    transition: all 0.2s ease;
 }
 
-.lv-product-card__button::after {
+/* Hover / active */
+button.lv-product-card__button:hover,
+a.lv-product-card__button:hover,
+button.lv-product-card__button:active,
+a.lv-product-card__button:active,
+button.lv-product-card__button:focus,
+a.lv-product-card__button:focus {
+    background: #5B4B6B !important;
+    /* violeta oscuro */
+    color: #ffffff !important;
+
+    border-radius: 999px;
+    transform: translateY(-1px);
+}
+
+/* underline */
+button.lv-product-card__button::after,
+a.lv-product-card__button::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
+    left: 12px;
+    right: 12px;
+    bottom: 6px;
     height: 1px;
-    background-color: var(--lv-color-primary);
-    transition: transform var(--lv-transition-fast);
-    transform-origin: left;
+
+    background-color: #8A7BB0;
+
+    transform: scaleX(1);
+    transform-origin: center;
+    transition: transform 0.2s ease;
 }
 
-.lv-product-card__button:hover::after {
-    transform: scaleX(0.6);
+/* underline hover */
+button.lv-product-card__button:hover::after,
+a.lv-product-card__button:hover::after,
+button.lv-product-card__button:active::after,
+a.lv-product-card__button:active::after {
+    transform: scaleX(0.3);
 }
 
 /* Hover sutil */
